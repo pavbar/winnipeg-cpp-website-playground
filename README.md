@@ -74,7 +74,6 @@ hugo server
 ## Documentation
 
 - **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** - How to create and organize posts
-- **[docs/GIT_WORKFLOW.md](docs/GIT_WORKFLOW.md)** - Branching and contribution workflow
 - **[AGENTS.md](AGENTS.md)** - Repository conventions and guidelines
 
 ## Project Structure

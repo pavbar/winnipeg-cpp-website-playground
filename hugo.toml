@@ -1,4 +1,5 @@
 baseURL = 'https://winnipeg-cpp.github.io/website/'
+canonifyURLs = true
 languageCode = 'en-us'
 timeZone = 'America/Winnipeg'
 title = 'Winnipeg C++ Developers'

@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://winnipeg-cpp.github.io/website/'
 languageCode = 'en-us'
 timeZone = 'America/Winnipeg'
 title = 'Winnipeg C++ Developers'

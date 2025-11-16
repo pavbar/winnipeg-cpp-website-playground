@@ -1,11 +1,31 @@
 baseURL = '/'
 languageCode = 'en-us'
 timeZone = 'America/Winnipeg'
-title = 'C++ Meetups'
+title = 'Winnipeg C++ Developers'
 theme = 'PaperMod'
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
 [params]
   [params.logo]
-    logoText = 'C++ Meetups'
+    logoText = 'Winnipeg C++ Developers'
+
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts/'
+  weight = 10
+
+[[menu.main]]
+  name = 'GitHub'
+  url = 'https://github.com/winnipeg-cpp'
+  weight = 20
+
+[[params.socialIcons]]
+  name = 'github'
+  url = 'https://github.com/winnipeg-cpp'
+
+[[params.socialIcons]]
+  name = 'eventbrite'
+  url = 'https://www.eventbrite.ca/o/braden-ganetsky-77752664253'

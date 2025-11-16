@@ -1,0 +1,11 @@
+baseURL = '/'
+languageCode = 'en-us'
+timeZone = 'America/Winnipeg'
+title = 'C++ Meetups'
+theme = 'PaperMod'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+[params]
+  [params.logo]
+    logoText = 'C++ Meetups'

@@ -1,61 +1,90 @@
-# Hugo Quickstart
+# Winnipeg C++ Developers
 
-This project uses [Hugo](https://gohugo.io/), a fast static site generator. The steps below cover the basics so you can preview and publish the site.
+Welcome to the Winnipeg C++ Developers user group website repository! This is the source code for our community website where we share meetup announcements, technical articles, and resources for C++ developers in Winnipeg.
 
-## Prerequisites
-- Install the latest **Hugo Extended** release for your platform. Verify with:
-  ```bash
-  hugo version
-  ```
-- Optional but useful: install Git to version-control content updates.
+💻 **GitHub:** [github.com/winnipeg-cpp](https://github.com/winnipeg-cpp)
 
-## Local Development
-1. Start the built-in server:
+
+## About This Repository
+
+This website is built with [Hugo](https://gohugo.io/), a fast static site generator. The site features:
+
+- Monthly meetup announcements
+- Technical articles and tutorials
+- Community resources
+- Event photos and recaps
+
+## Contributing
+
+We welcome contributions! Here's how you can help:
+
+### Adding Content
+
+**For meetup organizers and contributors:**
+
+1. **Clone the repository:**
    ```bash
-   hugo server
+   git clone https://github.com/winnipeg-cpp/website.git
+   cd website
    ```
-2. Open the URL shown in the terminal (default: http://localhost:1313/) to preview changes live.
-3. Stop the server with `Ctrl+C` when you are finished.
 
-## Creating Content
+2. **Create a branch:**
+   ```bash
+   git checkout -b content/your-content-name
+   ```
 
-Posts are organized in year/month folders and created using archetypes (templates):
+3. **Create a new post:**
+   ```bash
+   # Monthly meetup announcement
+   hugo new --kind meetup posts/2025/2025-12/2025-12-meetup.md
+   
+   # Technical article
+   hugo new --kind technical posts/2025/2025-12/2025-12-15-article-title.md
+   ```
 
-**Create a monthly meetup post:**
+4. **Preview your changes:**
+   ```bash
+   hugo server -D
+   ```
+   Open http://localhost:1313/ to see your changes
+
+5. **Submit a pull request:**
+   ```bash
+   git add .
+   git commit -m "Add December meetup announcement"
+   git push -u origin content/your-content-name
+   ```
+
+See **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** for detailed content creation instructions.
+
+### Development Setup
+
+**Prerequisites:**
+- [Hugo Extended](https://gohugo.io/installation/) (latest version)
+- Git
+
+**Quick Start:**
 ```bash
-hugo new --kind meetup posts/2025/2025-12/2025-12-meetup.md
+# Clone and preview
+git clone https://github.com/winnipeg-cpp/website.git
+cd website
+hugo server
 ```
 
-**Create an announcement:**
-```bash
-hugo new --kind announcement posts/2025/2025-12/2025-12-15-announcement-topic.md
+## Documentation
+
+- **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** - How to create and organize posts
+- **[docs/GIT_WORKFLOW.md](docs/GIT_WORKFLOW.md)** - Branching and contribution workflow
+- **[AGENTS.md](AGENTS.md)** - Repository conventions and guidelines
+
+## Project Structure
+
 ```
-
-**Create a technical article:**
-```bash
-hugo new --kind technical posts/2025/2025-12/2025-12-15-article-title.md
+website/
+├── content/posts/        # Blog posts organized by year/month
+├── static/images/        # Images and media files
+├── archetypes/           # Post templates (meetup, announcement, technical)
+├── docs/                 # Documentation
+├── hugo.toml             # Site configuration
+└── themes/PaperMod/      # Hugo theme
 ```
-
-Hugo automatically creates the folder structure and fills in templates with placeholders for you to edit.
-
-For detailed instructions, see **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)**.
-
-## Building for Production
-- Create the static site output:
-  ```bash
-  hugo
-  ```
-- Hugo writes the compiled site to the `public/` directory. Deploy the contents of `public/` to your hosting provider or static hosting service.
-
-## Customizing the Site
-- Global settings (title, theme, params) live in `hugo.toml`.
-- Static assets such as images and downloads go in `static/`. Organize them in subdirectories like `static/images/` for easy management.
-  - Reference in posts: `![Alt text](/images/photo.jpg)` (note the leading `/`)
-- Custom styles and pipeline-ready assets go in `assets/`.
-- Layout overrides reside in `layouts/`. Anything placed here takes precedence over the theme defaults.
-
-## Additional Resources
-
-- **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** - Complete guide for creating and organizing posts
-- **[AGENTS.md](AGENTS.md)** - Repository guidelines and conventions
-- [Official Hugo documentation](https://gohugo.io/documentation/)

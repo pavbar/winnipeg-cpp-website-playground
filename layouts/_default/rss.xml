@@ -20,7 +20,7 @@
       {{- $authorName = . }}
     {{- end }}
   {{- else }}
-    {{- $authorName  = . }}
+    {{- $authorName = . }}
   {{- end }}
 {{- else }}
   {{- with site.Author.name }}

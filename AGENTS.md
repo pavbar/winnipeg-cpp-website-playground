@@ -1,5 +1,8 @@
 # Repository Guidelines
 
+## Agent Startup Rule
+Before doing work in this repository, read `README.md` to confirm setup and workflow details.
+
 ## Project Structure & Module Organization
 This Hugo site keeps Markdown source in `content/`, organized chronologically in year/month folders (e.g., `content/posts/2025/2025-11/`). New posts should use archetypes (`hugo new --kind <type> posts/YYYY/YYYY-MM/<filename>.md`), which pre-populate TOML front matter and content structure. Available archetypes: `meetup`, `announcement`, `technical`, and `default`. Theme-specific templates live in `themes/terminal/`; add custom overrides under `layouts/` instead of editing theme files directly. Static assets (images, downloads) belong in `static/` organized in subdirectories (e.g., `static/images/`, `static/downloads/`); reference them in posts with `/images/photo.jpg`. Pipeline-ready SCSS or JS goes in `assets/`. The `public/` directory is build output and should not be hand-edited; treat `resources/` as Hugo's cache.
 
@@ -26,6 +29,10 @@ Run `hugo server` and inspect pages in multiple viewport sizes before opening a 
 
 ## Commit & Pull Request Guidelines
 Follow the short, imperative style used in the history (`Add ...`, `Update ...`) and keep commits scoped to a single change. Reference related issues in the commit body or PR description using `Fixes #ID` when applicable. Pull requests should outline the change, list verification steps (commands run, browsers checked), and include screenshots for visual updates. Avoid committing generated output (`public/`, `resources/`) unless a release workflow explicitly requires it.
+
+- Always create or switch to a topic branch before making changes.
+- Never push directly to `main`.
+- Ship changes through pull requests only.
 
 ## Safety and secrets
 - Never add secrets to git (tokens, passwords, private keys).

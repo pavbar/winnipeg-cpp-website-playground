@@ -1,91 +1,57 @@
 # Winnipeg C++ Developers
 
-Welcome to the Winnipeg C++ Developers user group website repository! This is the source code for our community website where we share meetup announcements, technical articles, and resources for C++ developers in Winnipeg.
+This repository contains the Hugo source for the Winnipeg C++ Developers website, including
+meetup announcements, technical posts, and supporting site configuration.
 
-💻 **GitHub:** [github.com/winnipeg-cpp](https://github.com/winnipeg-cpp)
+GitHub org: [github.com/winnipeg-cpp](https://github.com/winnipeg-cpp)
+Live site: [winnipeg-cpp.github.io/website](https://winnipeg-cpp.github.io/website/)
 
+## Quick Start
 
-## About This Repository
+Prerequisites:
 
-This website is built with [Hugo](https://gohugo.io/), a fast static site generator. The site features:
-
-- Monthly meetup announcements
-- Technical articles and tutorials
-- Community resources
-- Event photos and recaps
-
-## Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Adding Content
-
-**For meetup organizers and contributors:**
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/winnipeg-cpp/website.git
-   cd website
-   git submodule update --init
-   ```
-
-2. **Create a branch:**
-   ```bash
-   git checkout -b content/your-content-name
-   ```
-
-3. **Create a new post:**
-   ```bash
-   # Monthly meetup announcement
-   hugo new --kind meetup posts/2025/2025-12/2025-12-meetup.md
-   
-   # Technical article
-   hugo new --kind technical posts/2025/2025-12/2025-12-15-article-title.md
-   ```
-
-4. **Preview your changes:**
-   ```bash
-   hugo server -D
-   ```
-   Open http://localhost:1313/ to see your changes
-
-5. **Submit a pull request:**
-   ```bash
-   git add .
-   git commit -m "Add December meetup announcement"
-   git push -u origin content/your-content-name
-   ```
-
-See **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** for detailed content creation instructions.
-
-### Development Setup
-
-**Prerequisites:**
-- [Hugo Extended](https://gohugo.io/installation/) (latest version)
+- [Hugo Extended](https://gohugo.io/installation/)
 - Git
 
-**Quick Start:**
+From the repository root:
+
 ```bash
-# Clone and preview
-git clone https://github.com/winnipeg-cpp/website.git
-cd website
-git submodule update --init
-hugo server
+git submodule update --init --recursive
+hugo server -D
 ```
 
-## Documentation
+Open `http://localhost:1313/` to preview the site locally.
 
-- **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** - How to create and organize posts
-- **[AGENTS.md](AGENTS.md)** - Repository conventions and guidelines
+## Key Commands
 
-## Project Structure
+- `hugo server -D` - Preview the site locally with drafts enabled.
+- `hugo server -D --buildFuture` - Preview drafts and future-dated posts.
+- `hugo` - Build the production site into `public/`.
+- `hugo --gc --minify` - Run a clean, minified production build.
 
-```
-website/
-├── content/posts/        # Blog posts organized by year/month
-├── static/images/        # Images and media files
-├── archetypes/           # Post templates (meetup, announcement, technical)
-├── docs/                 # Documentation
-├── hugo.toml             # Site configuration
-└── themes/PaperMod/      # Hugo theme
-```
+## Current Scope
+
+The site currently covers:
+
+- Monthly meetup announcements
+- Community announcements
+- Technical articles and tutorials
+- Shared resources for local C++ developers
+
+## Layout Summary
+
+Key paths:
+
+- `content/` - Markdown content
+- `archetypes/` - Post templates
+- `layouts/` - Local Hugo overrides
+- `themes/PaperMod/` - Theme submodule
+- `docs/` - Contributor documentation
+
+See [INDEX.md](INDEX.md) for the canonical repository map.
+
+## Docs
+
+- [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) - Detailed content authoring workflow
+- [AGENTS.md](AGENTS.md) - Repo-specific operating guidelines
+- [INDEX.md](INDEX.md) - Canonical repository structure map

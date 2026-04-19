@@ -89,7 +89,7 @@ hugo new posts/2025/2025-11/2025-11-15-my-post.md
 
 ## Best Practices
 
-- Use `kebab-case` for filenames (lowercase with hyphons)
+- Use `kebab-case` for filenames (lowercase with hyphens)
 - Meetup posts are just `YYYY-MM-meetup.md` (one per month, location goes in content)
 - Hugo automatically creates folders - just use the full path
 - URLs are clean and don't include folder structure: `/posts/2026-01-meetup/`
@@ -163,4 +163,3 @@ hugo new --kind technical posts/2025/2025-11/2025-11-20-smart-pointers-guide.md
 - `posts/2025/2025-11/2025-11-meetup.md` → `/posts/2025-11-meetup/`
 - `posts/2025/2025-11/2025-11-15-announcement-speaker-call.md` → `/posts/2025-11-15-announcement-speaker-call/`
 - `posts/2025/2025-12/2025-12-20-move-semantics-explained.md` → `/posts/2025-12-20-move-semantics-explained/`
-

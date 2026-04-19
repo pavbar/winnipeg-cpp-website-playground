@@ -1,10 +1,44 @@
 # Repository Guidelines
 
+## Purpose of this repo
+This repository contains the Hugo source for the Winnipeg C++ Developers website. Safe
+contributions keep content organized, preserve the PaperMod-based site structure, and verify the
+site still builds cleanly before review.
+
 ## Agent Startup Rule
 Before doing work in this repository, read `README.md` to confirm setup and workflow details.
 
+## Context gathering
+- Read `README.md` first.
+- Read `INDEX.md` for the canonical structure map when you need to orient in the repo.
+- Prefer read-only inspection before editing files.
+
+## Repo map
+- `content/` - Site content organized by year and month.
+- `archetypes/` - Hugo templates for new posts.
+- `layouts/` - Local layout overrides for the site.
+- `themes/PaperMod/` - Theme submodule used by this repository.
+- `docs/` - Content authoring and contributor documentation.
+- `INDEX.md` - Canonical repository structure map.
+
 ## Project Structure & Module Organization
-This Hugo site keeps Markdown source in `content/`, organized chronologically in year/month folders (e.g., `content/posts/2025/2025-11/`). New posts should use archetypes (`hugo new --kind <type> posts/YYYY/YYYY-MM/<filename>.md`), which pre-populate TOML front matter and content structure. Available archetypes: `meetup`, `announcement`, `technical`, and `default`. Theme-specific templates live in `themes/terminal/`; add custom overrides under `layouts/` instead of editing theme files directly. Static assets (images, downloads) belong in `static/` organized in subdirectories (e.g., `static/images/`, `static/downloads/`); reference them in posts with `/images/photo.jpg`. Pipeline-ready SCSS or JS goes in `assets/`. The `public/` directory is build output and should not be hand-edited; treat `resources/` as Hugo's cache.
+This Hugo site keeps Markdown source in `content/`, organized chronologically in year/month
+folders (for example, `content/posts/2025/2025-11/`). New posts should use archetypes
+(`hugo new --kind <type> posts/YYYY/YYYY-MM/<filename>.md`), which pre-populate TOML front matter
+and content structure. Available archetypes: `meetup`, `announcement`, `technical`, and
+`default`. Theme-specific templates live in `themes/PaperMod/`; add custom overrides under
+`layouts/` instead of editing theme files directly. Static assets (images, downloads) belong in
+`static/` organized in subdirectories (for example, `static/images/`, `static/downloads/`);
+reference them in posts with `/images/photo.jpg`. Pipeline-ready SCSS or JS goes in `assets/`.
+The `public/` directory is build output and should not be hand-edited; treat `resources/` as
+Hugo's cache.
+
+## Common commands
+- Setup: `git submodule update --init --recursive`
+- Run: `hugo server -D`
+- Test preview with future posts: `hugo server -D --buildFuture`
+- Build: `hugo`
+- Build for release verification: `hugo --gc --minify`
 
 ## Build, Test, and Development Commands
 - `hugo server -D`: Run the local preview with drafts enabled and live reload. Use `-p 1313` if you need a different port.
@@ -33,6 +67,7 @@ Follow the short, imperative style used in the history (`Add ...`, `Update ...`)
 - Always create or switch to a topic branch before making changes.
 - Never push directly to `main`.
 - Ship changes through pull requests only.
+- Prefer intentional staging such as `git add <paths...>` or `git add -u` over `git add .`.
 
 ## Safety and secrets
 - Never add secrets to git (tokens, passwords, private keys).
